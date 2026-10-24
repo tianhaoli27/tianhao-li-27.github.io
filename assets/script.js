@@ -17,6 +17,7 @@ function setLanguage(next){
   });
   languageButton.innerHTML = `${next==='en'?'中文':'EN'} <span aria-hidden="true">↗</span>`;
   languageButton.setAttribute('aria-label',next==='en'?'切换到中文':'Switch to English');
+  languageButton.setAttribute('aria-pressed',String(next==='en'));
   document.querySelector('[data-nav]').setAttribute('aria-label',next==='en'?'Main navigation':'主导航');
   document.querySelector('.portrait-frame img').alt=next==='en'?'Portrait of Tianhao Li':'Tianhao Li 的个人照片';
   document.querySelector('[data-copy-status]').textContent='';
@@ -36,3 +37,4 @@ document.querySelector('[data-copy]').addEventListener('click',async()=>{
     status.textContent=language==='en'?'Select and copy: litianh@kean.edu':'请选中并复制：litianh@kean.edu';
   }
 });
+
